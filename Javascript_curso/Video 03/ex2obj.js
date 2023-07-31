@@ -2,8 +2,8 @@
 // deve possui pelo menos duas propriedades nome e sobrenome
 
 let dadosPessoais = {
-  nomeCompleto: "Thiago Tavares",
-
+  nome: "Thiago",
+  sobrenome: "Tavares",
   idade: 18,
   altura: 1.6,
   peso: 46,
@@ -12,7 +12,9 @@ let dadosPessoais = {
 console.log(dadosPessoais);
 
 //crie um metodo no objeto anterior, que mostre o seu nome completo
-console.log(dadosPessoais.nomeCompleto);
+dadosPessoais.nomeCompleto = function () {
+  return `${this.nome} ${this.sobrenome}`;
+};
 
 //modifique o valor da propriedade preco para 3000
 
@@ -32,6 +34,12 @@ let cachorro = {
   raca: "labrador",
   cor: "preto",
   idade: 10,
-  late: "ao ver homem",
+  latir(pessoa) {
+    if (pessoa == "mulher") {
+      return console.log("nao irei latir");
+    } else if (pessoa == "homem") {
+      return console.log("irei latir legal pra ti");
+    } else return console.log("nao trabalhamos com androids");
+  },
 };
-console.log(cachorro);
+cachorro.latir("homem");
